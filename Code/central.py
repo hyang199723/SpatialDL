@@ -31,7 +31,7 @@ def get_wkdir():
         #return "/share/bjreich/hyang23/SpatialDL/"
         return "/r/bb04na2a.unx.sas.com/vol/bigdisk/lax/hoyang/DLTest/SpatialDL/"
     elif plat == "Darwin":
-        return "/Users/hongjianyang/PycharmProjects/SpatialDL/"
+        return "/Users/hongjianyang/SpatialDL/"
     else:
         raise Exception("Working system not defined")
 
