@@ -28,8 +28,8 @@ def get_wkdir():
     # Get the working platform
     plat = platform.system()
     if plat == "Linux":
-        return "/share/bjreich/hyang23/SpatialDL/"
-        # return "/r/bb04na2a.unx.sas.com/vol/bigdisk/lax/hoyang/DLTest/SpatialDL/"
+        #return "/share/bjreich/hyang23/SpatialDL/"
+        return "/r/bb04na2a.unx.sas.com/vol/bigdisk/lax/hoyang/DLTest/SpatialDL/"
     elif plat == "Darwin":
         return "/Users/hongjianyang/PycharmProjects/SpatialDL/"
     else:
@@ -141,7 +141,7 @@ class RBF(nn.Module):
         self.out_features = np.sum(n_centers)
         self.n_centers = torch.tensor(n_centers).to(torch.float32)
         self.knots_1d = [torch.linspace(0,1,int(np.sqrt(i))) for i in n_centers]
-        self.centers = torch.zeros((self.out_features, 2))
+        self.centers = torch.zeros((self.out_features, 2), device=device)
         sum = 0
         for i in range(len(n_centers)):
             amount = n_centers[i]
